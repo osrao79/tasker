@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf build && npx tsc",
     "prestart": "npm run build",
     "dev": "nodemon --exec ts-node src/index.ts",
-    "start": "nodemon build/index.js"
+    "start": "nodemon build/index.js",
+    "build": "rimraf build && tsc",
+  "ts.check": "tsc --project tsconfig.json",
+  "add-build": "git add build"
   },
   "author": "",
   "license": "ISC",
@@ -35,5 +37,10 @@
     "@types/otp-generator": "^4.0.0",
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1"
-  }
+  },
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+]
 }
