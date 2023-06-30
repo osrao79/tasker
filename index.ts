@@ -1,8 +1,8 @@
 import express, {Express,Request,Response} from 'express';
-import {PORT} from '../config'
+import {PORT} from './config'
 import mongoose from 'mongoose';
-import connectDB from '../db';
-import router from '../routes/routes';
+import connectDB from './db';
+import router from './routes/routes';
 import cookieParser from 'cookie-parser';
 const cors = require('cors')
 const app :Express= express()
