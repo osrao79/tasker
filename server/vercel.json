@@ -1,10 +1,16 @@
 {
   "version": 2,
-  "name": "tsker",
   "builds": [
-     { "src": "index.js", "use": "@vercel/node" }
+      {
+          "src": "build/index.js",
+          "use": "@vercel/node",
+          "config": { "includeFiles": ["build/**"] }
+      }
   ],
   "routes": [
-     { "src": "/(.*)", "dest": "/index.js" }
+      {
+          "src": "/(.*)",
+          "dest": "build/index.js"
+      }
   ]
 }
