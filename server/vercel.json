@@ -1,15 +1,10 @@
 {
   "version": 2,
+  "name": "tsker",
   "builds": [
-    {
-      "src": "index.js",
-      "use": "@now/node"
-    }
+     { "src": "index.js", "use": "@vercel/node" }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "index.js"
-    }
+     { "src": "/(.*)", "dest": "/index.js" }
   ]
 }
